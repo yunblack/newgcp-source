@@ -1,3 +1,5 @@
+from flask import Flask
+
 import requests
 import json
 import datetime
@@ -11,6 +13,7 @@ Humidity = []
 Pressure = []
 Wind = []
 
+app = Flask(__name__)
 
 def weatherAPI():
     now = datetime.datetime.now()
@@ -42,3 +45,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    app.run(host='127.0.0.1', port=8080, debug=True)
